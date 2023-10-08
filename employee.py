@@ -11,13 +11,16 @@ class Employee:
             self.hourly = False
             self.time = 1
 
-    def get_pay(self):
+    def get_initial_pay(self):
         pay = self.salary * self.time
         return pay
 
+    def get_pay(self):
+        return self.get_initial_pay()
+
     def string_output_helper_initial(self):
         if (self.hourly != True):
-            returnString = str(self.name) + " works on a monthly salary of " + str(self.get_pay())
+            returnString = str(self.name) + " works on a monthly salary of " + str(self.get_initial_pay())
         else:
             returnString = str(self.name) + " works on a contract of " + str(self.time) + " hours at " + str(self.salary) + "/hour"
 
